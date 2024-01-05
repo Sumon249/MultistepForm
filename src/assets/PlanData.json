@@ -1,0 +1,22 @@
+{
+  "plans":[
+    {
+      "name":"Arcade",
+      "imgUrl":"icon-arcade.svg",
+      "monthly_price": "$9",
+      "yearly_price": "$90"
+    },
+    {
+      "name":"Advanced",
+      "imgUrl":"icon-advanced.svg",
+      "monthly_price": "$12",
+      "yearly_price": "$120"
+    },
+    {
+      "name":"Pro",
+      "imgUrl":"icon-pro.svg",
+      "monthly_price": "$15",
+      "yearly_price": "$150"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+
+.sidebar{
+  background:url(../../../assets/images/bg-sidebar-desktop.svg);
+  background-position: center;
+  background-size:cover;
+}
+p{
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.numbering{
+  border: 2px solid white;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.square{
+  /* padding:30px; */
+  width: 30px;
+  line-height: 30px;
+  aspect-ratio: 1;
+
+}
+
+.selected{
+  background-color: var(--pastel-blue);
+  color: var(--marine-blue);
+}

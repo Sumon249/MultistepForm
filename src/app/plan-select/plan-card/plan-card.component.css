@@ -1,0 +1,13 @@
+.card-text{
+  margin-top: 2em;
+}
+.plan-card{
+  /* width: 10em; */
+  border: 1px solid var(--light-gray);
+  border-radius: 10%;
+  padding: 1rem;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+}

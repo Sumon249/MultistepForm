@@ -1,0 +1,15 @@
+<div class="container sidebar py-4 h-100 rounded">
+  <div *ngFor ="let step of steps; index as count" class ="row">
+    <div class="d-flex align-items-center text-light" >
+      <div class="m-3 p-2 fw-bold numbering " [ngClass]="{'selected': selected === count}">
+        <p class ="text-center square">
+          {{count+1}}
+        </p>
+      </div>
+      <div class ="">
+        <p class ="m-0 fw-light small">Step {{count+1}}</p>
+        <p class ="m-0 fw-bold">{{step}} </p>
+      </div>
+    </div>
+  </div>
+</div>

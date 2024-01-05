@@ -1,0 +1,35 @@
+.checkbox-container{
+  border: 2px solid rgb(199, 198, 198);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+input[type='checkbox']{
+  width: 17px;
+  height: 17px;
+  background-color:green;
+}
+input[type='checkbox']:checked{
+  width: 17px;
+  height: 17px;
+  background-color:green;
+  color:green;
+}
+
+input:checked + label{
+  border: 2px solid green;
+}
+.addon-title{
+  font-size: 15px;
+  color: var(--marine-blue);
+}
+
+.addon-desc{
+  color: var(--cool-gray);
+}
+.addon-price{
+  font-weight: 500;
+  color: var(--purplish-blue);
+}

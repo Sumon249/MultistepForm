@@ -1,0 +1,23 @@
+.background{
+  background-color: rgb(222, 227, 253);
+}
+.form-background{
+  width: 60%;
+  height: 95%;
+  box-shadow: 1px sol;
+}
+.row-container{
+  height: 100%;
+}
+p{
+  margin: 0;
+  padding:0;
+}
+a{
+  text-decoration: none;
+  color: initial;
+}
+
+.test{
+  height: 100%;
+}
