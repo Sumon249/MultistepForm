@@ -5,13 +5,13 @@
   <div class="my-5 flex-grow-1">
 
     <div class="row">
-      <div class="col-4" *ngFor="let plan of plans"> <app-plan-card [currPlan]="plan" /></div>
+      <div class="col-4" *ngFor="let plan of plans"> <app-plan-card [currPlan]="plan" [billingType] = "selectedBillingType" (planSelected)="onPlanSelect($event)"/></div>
     </div>
 
     <div class="toggle-row d-flex justify-content-around align-items-center ">
       <p class="fw-bold" [ngClass]="{'selected-type': !selectedBillingType, 'unselected-type': selectedBillingType}">Monthly</p>
       <label class="switch">
-        <input type="checkbox" name = "monthly" [(ngModel)] = "selectedBillingType"   >
+        <input type="checkbox" name = "monthly" [(ngModel)] = "isBillingSelected"  value="monthly" (change)="updateBillingType()" [checked]="selectedBillingType === 'yearly'" >
         <span class="slider round"></span>
       </label>
       <p class="fw-bold" [ngClass]="{'selected-type': selectedBillingType, 'unselected-type': !selectedBillingType}">Yearly</p>
@@ -19,7 +19,7 @@
   </div>
   </div>
   <div class="mb-4">
-      <a routerLink="/info" class="fw-bold">Go Back</a>
-      <button class="btn btn-primary float-end" routerLink="/select-addons">Next Step</button>
+      <a  class="fw-bold" (click)="navigatePrevPage()">Go Back</a>
+      <button class="btn btn-primary float-end" (click)="navigateNextPage()">Next Step</button>
   </div>
 </div>

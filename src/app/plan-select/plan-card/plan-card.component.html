@@ -1,4 +1,5 @@
-<div class="plan-card container">
+<input type="radio" [id] = "currPlan.name" class = "d-none" name ="plan-radio" [value]="currPlan.name" [(ngModel)] = "plan" (ngModelChange)="onPlanSelect($event)">
+<label class="plan-card container" [for] = "currPlan.name" >
   <div class="row">
     <div class="card-image">
       <img src="assets/{{currPlan.imgUrl}}" alt="">
@@ -7,7 +8,8 @@
   <div class="row">
     <div class="card-text">
       <p class="fw-bold">{{currPlan.name}}</p>
-      <p>{{currPlan.monthly_price}}</p>
+      <p *ngIf="!billingType" class = "price-text">{{currPlan.monthly_price}}/mo</p>
+      <p *ngIf="billingType" class = "price-text">{{currPlan.yearly_price}}/yr</p>
     </div>
   </div>
-</div>
+</label>

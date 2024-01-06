@@ -7,14 +7,19 @@
       <div class="p-3 d-flex flex-column splitup">
         <div class="my-2  d-flex justify-content-between">
           <div>
-            <p class="fw-bold">Arcade(Monthly)</p>
+            <p class="fw-bold text-capitalize">{{selectedPlan}} ({{billingType}})</p>
             <a routerLink="/plan-select" class="text-decoration-underline ">Change</a>
           </div>
           <div>
-            <p>+$9/mo</p>
+            <p class = "plan-price">{{planPrice}}<span *ngIf="billingType === 'monthly'">/mo</span><span *ngIf="billingType === 'yearly'">/yr</span> </p>
           </div>
         </div>
         <hr>
+
+
+
+
+
         <div class="my-2 d-flex justify-content-between">
           <div>
             <p class="text-muted">Online service</p>
@@ -33,6 +38,15 @@
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
       <div class="p-3 my-2 d-flex justify-content-between">
         <div>
           <p class="text-muted">Total(per month)</p>

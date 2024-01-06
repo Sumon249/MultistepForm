@@ -8,5 +8,8 @@ import { Component, Input } from '@angular/core';
 export class AddOnComponent {
  @Input() addonId;
  @Input() addonDetails;
+ @Input() billingType;
+
+isChecked: any;
 
 }

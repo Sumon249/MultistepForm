@@ -3,11 +3,22 @@
 }
 .plan-card{
   /* width: 10em; */
-  border: 1px solid var(--light-gray);
+  border: 2px solid var(--light-gray);
   border-radius: 10%;
   padding: 1rem;
   -webkit-border-radius: 10%;
   -moz-border-radius: 10%;
   -ms-border-radius: 10%;
   -o-border-radius: 10%;
+}
+input:hover + label{
+  border: 2px solid var(--purplish-blue);
+
+}
+input:checked + label{
+  border: 2px solid var(--purplish-blue);
+  background-color: var(--alabaster);
+}
+.price-text{
+  color: var(--cool-gray);
 }

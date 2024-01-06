@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PlanDataService } from './plan-data.service';
+import { PlanDataService } from './retrieve-data.service';
 
 describe('PlanDataService', () => {
   let service: PlanDataService;

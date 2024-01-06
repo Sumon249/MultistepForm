@@ -6,21 +6,16 @@
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+.checked-label{
+  border: 2px solid var(--purplish-blue);
+  background-color: var(--alabaster);
+}
 input[type='checkbox']{
   width: 17px;
   height: 17px;
-  background-color:green;
-}
-input[type='checkbox']:checked{
-  width: 17px;
-  height: 17px;
-  background-color:green;
-  color:green;
 }
 
-input:checked + label{
-  border: 2px solid green;
-}
+
 .addon-title{
   font-size: 15px;
   color: var(--marine-blue);

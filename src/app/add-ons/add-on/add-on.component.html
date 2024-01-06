@@ -1,7 +1,7 @@
-<label [htmlFor]="'cb' + addonId" class="d-flex justify-content-between align-items-center p-3 checkbox-container">
+<label [htmlFor]="'cb' + addonId" class="d-flex justify-content-between align-items-center p-3 checkbox-container"  [ngClass]="{'checked-label': isChecked}">
 
   <div class="d-flex align-items-center gap-3">
-    <input type="checkbox" class="" [id]="'cb' + addonId">
+    <input type="checkbox" class="" [id]="'cb' + addonId" [(ngModel)] = "isChecked">
 
     <div class="">
       <p class="fw-bold addon-title">{{addonDetails.name}}</p>
@@ -9,6 +9,7 @@
     </div>
   </div>
   <div class="">
-    <p class=" addon-price">{{addonDetails.price}}</p>
+    <p class=" addon-price" *ngIf = "billingType == 'monthly'">{{addonDetails.monthly_price}}</p>
+    <p class=" addon-price" *ngIf = "billingType == 'yearly'">{{addonDetails.yearly_price}}</p>
   </div>
 </label>

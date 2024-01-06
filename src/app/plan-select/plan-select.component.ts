@@ -1,5 +1,7 @@
+import { query } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { PlanDataService } from '../plan-data.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RetrieveDataService } from '../retrieve-data.service';
 
 @Component({
   selector: 'app-plan-select',
@@ -7,12 +9,31 @@ import { PlanDataService } from '../plan-data.service';
   styleUrls: ['./plan-select.component.css']
 })
 export class PlanSelectComponent implements OnInit{
+
+
+
   plans = [];
-  selectedBillingType = false; //False - Monthly &&  True - Yearly
-  constructor(private planDataService:PlanDataService ){
+  selectedBillingType = "yearly";
+  selectedPlan = 'arcade';
+  isBillingSelected = true;
+  constructor(private retrieveDataService:RetrieveDataService, private router:Router, private route:ActivatedRoute ){
 
   }
   ngOnInit(): void {
-    this.plans = [...this.planDataService.getPlanDetails()];
+    this.plans = [...this.retrieveDataService.getPlanDetails()];
+
+  }
+  onPlanSelect(selectedPlan: any) {
+    this.selectedPlan = selectedPlan;
+  }
+  updateBillingType() {
+    this.selectedBillingType = this.isBillingSelected ? 'yearly' : 'monthly';
+  }
+  navigateNextPage() {
+
+    this.router.navigate(['/select-addons'], {queryParams: {'billing': this.selectedBillingType, 'plan': this.selectedPlan}})
+  }
+  navigatePrevPage() {
+    this.router.navigate(['/info']);
   }
 }

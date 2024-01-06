@@ -1,25 +1,32 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { RetrieveDataService } from '../retrieve-data.service';
 
 @Component({
   selector: 'app-add-ons',
   templateUrl: './add-ons.component.html',
   styleUrls: ['./add-ons.component.css']
 })
-export class AddOnsComponent {
-  addons = [{
-    "name": "Online Service",
-    "desc": "Access to multiplayer service",
-    "price": "+$1/mo"
-  },
-  {
-    "name": "Larger storage",
-    "desc": "Extra 1TB of cloud storage",
-    "price": "+$2/mo"
-  },
-  {
-    "name": "Customizable profile",
-    "desc": "Custom Theme on Profile",
-    "price": "+$2/mo"
+export class AddOnsComponent implements OnInit {
+  billingType;
+  addons;
+  currentParams;
+  constructor(private router:Router, private route:ActivatedRoute, private retrieveDataService: RetrieveDataService){
+
   }
-]
+  ngOnInit(){
+    this.route.queryParams.subscribe(params => {
+      this.billingType = params.billing;
+      console.log(params.billing);
+    });
+    this.addons = this.retrieveDataService.getAddonDetails();
+    this.currentParams = this.route.snapshot.queryParams;
+  }
+
+  navigateNextPage() {
+    this.router.navigate(['/finish'], {queryParams: this.currentParams})
+  }
+  navigatePrevPage() {
+    this.router.navigate(['/select-plan'],  {queryParams: this.currentParams});
+  }
 }
