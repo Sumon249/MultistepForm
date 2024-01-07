@@ -8,59 +8,43 @@
         <div class="my-2  d-flex justify-content-between">
           <div>
             <p class="fw-bold text-capitalize">{{selectedPlan}} ({{billingType}})</p>
-            <a routerLink="/plan-select" class="text-decoration-underline ">Change</a>
+            <a routerLink="/select-plan" class="text-decoration-underline ">Change</a>
           </div>
           <div>
-            <p class = "plan-price">{{planPrice}}<span *ngIf="billingType === 'monthly'">/mo</span><span *ngIf="billingType === 'yearly'">/yr</span> </p>
+            <p class = "plan-price">${{planPrice}}<span *ngIf="billingType === 'monthly'">/mo</span><span *ngIf="billingType === 'yearly'">/yr</span> </p>
           </div>
         </div>
         <hr>
 
-
-
-
-
-        <div class="my-2 d-flex justify-content-between">
+        <div class="my-2 d-flex justify-content-between" *ngFor="let addon of selectedAddons">
           <div>
-            <p class="text-muted">Online service</p>
+            <p class="text-muted">{{addon.name}}</p>
           </div>
           <div>
-            <p>+$1/mo</p>
-          </div>
-        </div>
-        <div class="my-2 d-flex justify-content-between">
-          <div>
-
-            <p class="text-muted">Larger storage</p>
-          </div>
-          <div>
-            <p>+$2/mo</p>
+            <p *ngIf = "billingType === 'monthly'">${{addon.monthly_price}}/mo</p>
+            <p *ngIf = "billingType === 'yearly'">${{addon.yearly_price}}/yr</p>
           </div>
         </div>
       </div>
 
 
 
-
-
-
-
-
-
       <div class="p-3 my-2 d-flex justify-content-between">
         <div>
-          <p class="text-muted">Total(per month)</p>
+          <p class="text-muted" *ngIf = "billingType === 'monthly'">Total (per month)</p>
+          <p class="text-muted" *ngIf = "billingType === 'yearly'">Total (per year)</p>
         </div>
         <div>
-          <p class="final-amount">+$12/mo</p>
+          <p class="final-amount"  *ngIf = "billingType === 'monthly'">${{finalPrice}}/mo</p>
+          <p class="final-amount"  *ngIf = "billingType === 'yearly'" > ${{finalPrice}}/yr</p>
         </div>
       </div>
 
     </div>
   </div>
   <div class="mb-4">
-    <a routerLink="/select-addons" class="fw-bold">Go Back</a>
-    <button class="btn btn-primary float-end" routerLink="/finish">Next Step</button>
+    <a  class="fw-bold" (click)="navigatePrevPage()">Go Back</a>
+    <button class="btn btn-primary float-end" (click)="navigateNextPage()">Next Step</button>
   </div>
 
 </div>

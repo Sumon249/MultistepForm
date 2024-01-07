@@ -9,12 +9,12 @@
     </div>
 
     <div class="toggle-row d-flex justify-content-around align-items-center ">
-      <p class="fw-bold" [ngClass]="{'selected-type': !selectedBillingType, 'unselected-type': selectedBillingType}">Monthly</p>
+      <p class="fw-bold" [ngClass]="{'selected-type': selectedBillingType == 'monthly', 'unselected-type': selectedBillingType == 'yearly'}">Monthly</p>
       <label class="switch">
         <input type="checkbox" name = "monthly" [(ngModel)] = "isBillingSelected"  value="monthly" (change)="updateBillingType()" [checked]="selectedBillingType === 'yearly'" >
         <span class="slider round"></span>
       </label>
-      <p class="fw-bold" [ngClass]="{'selected-type': selectedBillingType, 'unselected-type': !selectedBillingType}">Yearly</p>
+      <p class="fw-bold" [ngClass]="{'selected-type': selectedBillingType == 'yearly', 'unselected-type': selectedBillingType == 'monthly'}">Yearly</p>
     </div>
   </div>
   </div>

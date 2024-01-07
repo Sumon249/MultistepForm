@@ -4,21 +4,21 @@
     {
       "name": "Online Service",
       "desc": "Access to multiplayer service",
-      "monthly_price": "+$1/mo",
-      "yearly_price": "$10/yr"
+      "monthly_price": "1",
+      "yearly_price": "10"
     },
     {
       "name": "Larger storage",
       "desc": "Extra 1TB of cloud storage",
-      "monthly_price": "+$2/mo",
-      "yearly_price": "$20/yr"
+      "monthly_price": "2",
+      "yearly_price": "20"
 
     },
     {
       "name": "Customizable profile",
       "desc": "Custom Theme on Profile",
-      "monthly_price": "+$2/mo",
-      "yearly_price": "$20/yr"
+      "monthly_price": "2",
+      "yearly_price": "20"
     }
   ]
 }

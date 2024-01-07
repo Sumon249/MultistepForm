@@ -28,6 +28,8 @@ export class PlanSelectComponent implements OnInit{
   }
   updateBillingType() {
     this.selectedBillingType = this.isBillingSelected ? 'yearly' : 'monthly';
+    console.log(this.selectedBillingType);
+
   }
   navigateNextPage() {
 

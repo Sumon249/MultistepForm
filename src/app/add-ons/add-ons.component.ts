@@ -11,9 +11,11 @@ export class AddOnsComponent implements OnInit {
   billingType;
   addons;
   currentParams;
-  constructor(private router:Router, private route:ActivatedRoute, private retrieveDataService: RetrieveDataService){
+  selectedAddons = [];
 
-  }
+  constructor(private router:Router, private route:ActivatedRoute, private retrieveDataService: RetrieveDataService){}
+
+
   ngOnInit(){
     this.route.queryParams.subscribe(params => {
       this.billingType = params.billing;
@@ -23,10 +25,25 @@ export class AddOnsComponent implements OnInit {
     this.currentParams = this.route.snapshot.queryParams;
   }
 
+  updateSelectedAddons(addonId, event:Event){
+    if(event){
+      this.selectedAddons.push(addonId);
+    }
+    else{
+      this.selectedAddons = this.selectedAddons.filter(element => {
+        return element != addonId
+      })
+
+    }
+  }
+
   navigateNextPage() {
-    this.router.navigate(['/finish'], {queryParams: this.currentParams})
+    this.router.navigate(['/finish'], {queryParams: {'addons': this.selectedAddons}, queryParamsHandling: 'merge'})
   }
   navigatePrevPage() {
     this.router.navigate(['/select-plan'],  {queryParams: this.currentParams});
   }
+
+
+
 }

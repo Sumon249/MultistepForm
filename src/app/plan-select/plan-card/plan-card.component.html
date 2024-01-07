@@ -8,8 +8,8 @@
   <div class="row">
     <div class="card-text">
       <p class="fw-bold">{{currPlan.name}}</p>
-      <p *ngIf="!billingType" class = "price-text">{{currPlan.monthly_price}}/mo</p>
-      <p *ngIf="billingType" class = "price-text">{{currPlan.yearly_price}}/yr</p>
+      <p *ngIf="billingType == 'monthly'" class = "price-text">${{currPlan.monthly_price}}/mo</p>
+      <p *ngIf="billingType =='yearly'" class = "price-text">${{currPlan.yearly_price}}/yr</p>
     </div>
   </div>
 </label>

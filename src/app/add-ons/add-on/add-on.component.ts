@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-add-on',
@@ -9,7 +9,11 @@ export class AddOnComponent {
  @Input() addonId;
  @Input() addonDetails;
  @Input() billingType;
+ @Output() addonSelectedEvent = new EventEmitter<any>();
 
-isChecked: any;
+addonSelected: any;
 
+  change(){
+    this.addonSelectedEvent.emit(this.addonSelected);
+  }
 }

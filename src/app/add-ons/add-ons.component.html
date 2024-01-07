@@ -4,7 +4,7 @@
     <p class="text-muted">Add-ons help enhance your gaming experience.</p>
     <div class="my-5">
       <div *ngFor="let addon of addons; index as i" class="row my-3">
-        <app-add-on [addonId] = "i" [addonDetails] = "addon" [billingType] = "billingType"/>
+        <app-add-on [addonId] = "i" [addonDetails] = "addon" [billingType] = "billingType" (addonSelectedEvent)="updateSelectedAddons(i, $event)"/>
       </div>
 
     </div>
